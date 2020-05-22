@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GANwear</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="Gw.png" type="image/png">
+</head>
+
+
+<body>
+
+	 <div class="buttons">
+	    <button class="GANwearTrigger">GANwear</button>
+	    <button class="aboutTrigger">About</button>
+	    <button class="catalogueTrigger">Catalogue</button>
+	    <button class="contactTrigger">Contact Us</button>
+	    <img id="iconTwo" src="basket.png">
+  	</div>
+
+
+  	<div clas="GANwear active">
+		<div class="image">
+		</div>
+	</div>
+
+
+	<div class="about">
+		<h1 class="title">Thorugh fashion we have the<br>power to change the world</h1>
+		<p class="text">Fashion keep us together, mindful and happy. It brings us closer and inspire us. <br>Our mission is to create something new and unique. We are expanding the potential<br>of machine learning by creating groundbreaking innovations. 
+		We are generating an experimental and diverse collections of items for your comfort and well-being. We design, innovate and iterate. We test new technologies in action to improve fashion, and to change the world.</p>
+		<h1 class="title">GANwear aren’t shoes<br>They are memories</h1>
+		<p class="text">A generative adversarial network is a class of machine learning frameworks.
+					Two neural networks contest with each other in a game. Given a training set, this technique learns to generate new data with the same statistics as the training set.</p>
+					<img id="gan_diagram" src="gan_diagram.svg">
+		<h1 class="title">Recycling turns things<br>into other things </h1>
+		<p class="text">Sustainable fashion is not a trend, but the future. Good design is sustainable design. All of our products 					are made out of recycled clothing, and we strive for making things even more environmental friendly. 
+						We are inspired by the ability to learn, and translate that learning into action. 
+						Do the best you can! Wear clothes that matter! </p>
+		</div>
+
+	<div class="catalogue">
+		<div id=allImg class="img">
+		</div>
+	</div>
+
+	<div class="contact">
+		<p id="name">-R&YxGANwear</h1>
+		<p id="country">-Bulgaria, Sofia</h1>	
+		<p id="email">-R&YxGANwear@outlook.com</h1>
+	</div>
+
+	 <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+
+	<script type="text/javascript">
+
+		function all() {
+        let paths = [
+         {dir: '<img src="shoes/photo', length: 57},
+        ]
+
+        let sectionHtml = "";
+        for (let i =0; i < paths.length; i++) {
+          for (let j = 1; j < paths[i].length; j++ ) {
+            sectionHtml += paths[i].dir + j.toString()  + '.jpeg">'
+          }
+        }
+        let section = document.getElementById("allImg");
+        section.innerHTML = sectionHtml;
+        }
+
+      all();
+		
+		  $(document).ready(function() { 
+            $('.GANwearTrigger').click(function() {
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+                $('.GANwear').addClass("active");
+                $('.about').removeClass("active");
+                $('.catalogue').removeClass("active");
+                $('.contact').removeClass("active");
+            });
+
+
+             $('.aboutTrigger').click(function() {
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+                $('.about').addClass("active");
+                $('.GANwear').removeClass("active");
+                $('.catalogue').removeClass("active");
+                $('.contact').removeClass("active");
+            });
+
+             $('.catalogueTrigger').click(function() {
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+                $('.catalogue').addClass("active");
+                $('.GANwear').removeClass("active");
+                $('.about').removeClass("active");
+                $('.contact').removeClass("active");
+            });
+
+              $('.contactTrigger').click(function() {
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+                $('.contact').addClass("active");
+                $('.GANwear').removeClass("active");
+                $('.about').removeClass("active");
+                $('.catalogue').removeClass("active");
+            });
+
+        });
+
+
+	</script>
+
+
+</body>
+
+</html>
